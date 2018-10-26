@@ -143,8 +143,8 @@ class Main extends PluginBase implements Listener{
 								$level->addSound(new EndermanTeleportSound($pos1));
 								$level->addParticle(new LavaParticle($pos1));
 								$inv->removeItem(Item::get(131,1,1));
-								$sender->addTitle("§eOpening Crate:", "§aCommon!");
-								$this->getServer()->broadcastMessage($prefix . " §b$name §ajust opened Common Crate!");
+								$sender->addTitle("§l§eOpening Crate:", "§7COMMON");
+								$this->getServer()->broadcastMessage($prefix . " §d$name §ajust opened §7Common §dCrate!");
 								$result = rand(1,3);
 									 switch($result){
 							case 1:
@@ -162,7 +162,7 @@ class Main extends PluginBase implements Listener{
 									 }
 							}else{
 								$prefix = $this->cfg->get("Prefix");
-								$sender->sendMessage($prefix . " §fYou don't have §aCommon §fKey.");
+								$sender->sendMessage($prefix . " §fYou don't have §7Common §fKey.");
 							}
 							break;
 						case 2:
@@ -180,8 +180,8 @@ class Main extends PluginBase implements Listener{
 								$level->addSound(new EndermanTeleportSound($pos1));
 								$level->addParticle(new LavaParticle($pos1));
 								$inv->removeItem(Item::get(131,2,1));
-								$sender->addTitle("§eOpening Crate:", "§cVote!");
-								$this->getServer()->broadcastMessage($prefix . " §b$name §ajust opened §cVote §aCrate!");
+								$sender->addTitle("§e§lOpening Crate:", "§6VOTE");
+								$this->getServer()->broadcastMessage($prefix . " §b$name §ajust opened §6Vote §bCrate!");
 								$result = rand(1,3);
 									 switch($result){
 							case 1:
@@ -199,7 +199,7 @@ class Main extends PluginBase implements Listener{
 									 }
 							}else{
 								$prefix = $this->cfg->get("Prefix");
-								$sender->sendMessage($prefix . " §fYou don't have §cVote §fKey.");
+								$sender->sendMessage($prefix . " §fYou don't have §6Vote §fKey.");
 							}
 						break;
 						case 3:
@@ -217,8 +217,8 @@ class Main extends PluginBase implements Listener{
 								$level->addSound(new EndermanTeleportSound($pos1));
 								$level->addParticle(new LavaParticle($pos1));
 								$inv->removeItem(Item::get(131,3,1));
-								$sender->addTitle("§eOpening Crate:", "§6Rare!");
-								$this->getServer()->broadcastMessage($prefix . " §b$name §ajust opened §6Rare §aCrate!");
+								$sender->addTitle("§e§lOpening Crate:", "§4RARE");
+								$this->getServer()->broadcastMessage($prefix . " §b$name §ajust opened §4Rare §bCrate!");
 								$result = rand(1,6);
 									 switch($result){
 							case 1:
@@ -252,7 +252,7 @@ class Main extends PluginBase implements Listener{
 									 }
 							}else{
 								$prefix = $this->cfg->get("Prefix");
-								$sender->sendMessage($prefix . " §fYou don't have §6Rare §fKey.");
+								$sender->sendMessage($prefix . " §fYou don't have §4Rare §fKey.");
 							}
 						break;
 						case 4:
@@ -270,8 +270,8 @@ class Main extends PluginBase implements Listener{
 								$level->addSound(new EndermanTeleportSound($pos1));
 								$level->addParticle(new LavaParticle($pos1));
 								$inv->removeItem(Item::get(131,4,1));
-								$sender->addTitle("§eOpening Crate:", "§5Mythic!");
-								$this->getServer()->broadcastMessage($prefix . " §b$name §ajust opened §5Mythic §aCrate!");
+								$sender->addTitle("§e§lOpening Crate:", "§5MYTHIC");
+								$this->getServer()->broadcastMessage($prefix . " §b$name §ajust opened §5Mythic §bCrate!");
 								$result = rand(1,8);
 									 switch($result){
 							case 1:
@@ -301,9 +301,11 @@ class Main extends PluginBase implements Listener{
 									$i->addEnchantment($e);
 									$i->addEnchantment($e1);
 									$i->addEnchantment($e2);
-									$i->setCustomName("§6§lMythic§bSword");
+									$i->setCustomName("§l§4BUTCHERS §cWRATH§8!");
 									$inv->addItem($i);
-									$sender->sendMessage($prefix . " §bYou won a Enchanted §6§lMythic§bSword!"); 
+									$sender->sendMessage("§8=========================="); 
+							                $sender->sendMessage("§4BUTCHER §r§7Has been awoken");
+									$sender->sendMessage("§8==========================");
 								 break;
 							case 5:
 									   $inv->addItem(Item::get(466,0,15));
@@ -353,8 +355,8 @@ class Main extends PluginBase implements Listener{
 								$level->addSound(new EndermanTeleportSound($pos1));
 								$level->addParticle(new LavaParticle($pos1));
 								$inv->removeItem(Item::get(131,5,1));
-								$sender->addTitle("§eOpening Crate:", "§9Legendary!");
-								$this->getServer()->broadcastMessage($prefix . " §b$name §ajust opened §9Legendary §aCrate!");
+								$sender->addTitle("§e§lOpening Crate:", "§bLEGENDARY");
+								$this->getServer()->broadcastMessage($prefix . " §a$name §ajust opened §bLegendary §aCrate!");
 								$result = rand(1,8);
 									 switch($result){
 							case 1:
@@ -403,21 +405,21 @@ class Main extends PluginBase implements Listener{
 									 }
 							}else{
 								$prefix = $this->cfg->get("Prefix");
-								$sender->sendMessage($prefix . " §fYou don't have §9Legendary §fKey.");
+								$sender->sendMessage($prefix . " §fYou don't have §bLegendary §fKey.");
 							}
 						break;
 					}
 				});
 
-				$form->setTitle("§9Crates");
-				$form->setContent("§eYou need key to open any crate!");
+				$form->setTitle("§l§dELIXIR§5HCF §aCRATES");
+				$form->setContent("§6Must have a key to open a crate!");
 
-				$form->addButton("");
-				$form->addButton("§aCommon", 1, "http://xxniceyt.ga/games/Vote.jpg");
-				$form->addButton("§cVote", 2, "http://xxniceyt.ga/games/Common.jpg");
-				$form->addButton("§6Rare", 3, "http://xxniceyt.ga/games/Rare.jpg");
-				$form->addButton("§5Mythic", 4, "http://xxniceyt.ga/games/Mythic.jpg");
-				$form->addButton("§9Legendary", 5, "http://xxniceyt.ga/games/Legendary.jpg");
+				$form->addButton("§cEXIT CRATE MENU§8!");
+				$form->addButton("§l§7COMMON§r", 1, "http://xxniceyt.ga/games/Common.jpg");
+				$form->addButton("§l§6VOTE§r", 2, "http://xxniceyt.ga/games/Vote.jpg");
+				$form->addButton("§l§4RARE§r", 3, "http://xxniceyt.ga/games/Rare.jpg");
+				$form->addButton("§5§lMYTHIC§r", 4, "http://xxniceyt.ga/games/Mythic.jpg");
+				$form->addButton("§l§bLEGENDARY", 5, "http://xxniceyt.ga/games/Legendary.jpg");
 
 				$form->sendToPlayer($sender);
 			 }else{
